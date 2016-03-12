@@ -79,9 +79,7 @@ class PlaySoundsViewController: UIViewController {
     
     
     func playAudioWithPitch(of pitch: Float) {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        resetAudio()
         
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -99,14 +97,11 @@ class PlaySoundsViewController: UIViewController {
         audioPlayerNode.play()
     }
     
-    
     // The following code adds another effect (echo). It's very similar to changing the pitch with the
     // difference that I used the AVAudioUnitDelay class instead of AVAudioUnitTimePitch and setting the
     // time delay instead of the pitch
     func playAudioWithDelay(of delayInSeconds: NSTimeInterval) {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        resetAudio()
         
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -123,7 +118,6 @@ class PlaySoundsViewController: UIViewController {
         
         audioPlayerNode.play()
     }
-    
     
     
     // The following is not a part of the original Pitch Perfect App but was added because I think
