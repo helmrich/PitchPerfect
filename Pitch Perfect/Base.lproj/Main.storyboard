@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="FGk-Vx-koG">
-                                <rect key="frame" x="220" y="478" width="160" height="50"/>
+                                <rect key="frame" x="220" y="493" width="160" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXg-xk-3Ks">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -57,7 +57,7 @@
                             <constraint firstItem="lbo-fx-yoA" firstAttribute="top" secondItem="SBJ-f9-TbB" secondAttribute="bottom" constant="8" id="48r-CN-kC7"/>
                             <constraint firstItem="FGk-Vx-koG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EbQ-XE-bg4"/>
                             <constraint firstItem="SBJ-f9-TbB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ShQ-aL-RGe"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FGk-Vx-koG" secondAttribute="bottom" constant="72" id="aAm-bm-lHN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FGk-Vx-koG" secondAttribute="bottom" constant="57" id="aAm-bm-lHN"/>
                             <constraint firstItem="SBJ-f9-TbB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="koW-wk-YRj"/>
                         </constraints>
                     </view>
@@ -101,28 +101,28 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhP-JR-fm0">
-                                <rect key="frame" x="275" y="478" width="50" height="50"/>
+                                <rect key="frame" x="275" y="493" width="50" height="50"/>
                                 <state key="normal" image="StopButton"/>
                                 <connections>
                                     <action selector="stopAudio:" destination="5c0-Sq-4cO" eventType="touchUpInside" id="zIG-hf-xnN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdc-L5-vz0">
-                                <rect key="frame" x="50" y="220" width="100" height="100"/>
+                                <rect key="frame" x="50" y="215" width="100" height="100"/>
                                 <state key="normal" image="Chipmunk"/>
                                 <connections>
                                     <action selector="chipmunkSound:" destination="5c0-Sq-4cO" eventType="touchUpInside" id="w9V-vD-fzf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qQ-59-Nq7">
-                                <rect key="frame" x="450" y="220" width="100" height="100"/>
+                                <rect key="frame" x="450" y="215" width="100" height="100"/>
                                 <state key="normal" image="DarthVader"/>
                                 <connections>
                                     <action selector="darthVaderSound:" destination="5c0-Sq-4cO" eventType="touchUpInside" id="oPa-jT-F1o"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fe9-Cm-I9P">
-                                <rect key="frame" x="50" y="350" width="100" height="100"/>
+                                <rect key="frame" x="50" y="345" width="100" height="100"/>
                                 <state key="normal" image="Echo"/>
                                 <connections>
                                     <action selector="echoSound:" destination="5c0-Sq-4cO" eventType="touchUpInside" id="rUb-fy-2qV"/>
@@ -133,14 +133,14 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="3qQ-59-Nq7" secondAttribute="trailing" constant="30" id="NUm-KR-YBD"/>
                             <constraint firstItem="Jdc-L5-vz0" firstAttribute="leading" secondItem="Bht-xs-v2K" secondAttribute="leadingMargin" constant="30" id="QpV-yE-Q7p"/>
-                            <constraint firstItem="Mc0-4o-aEs" firstAttribute="top" secondItem="VhP-JR-fm0" secondAttribute="bottom" constant="72" id="Rxq-ik-2Dl"/>
-                            <constraint firstItem="3qQ-59-Nq7" firstAttribute="top" secondItem="stf-gi-f4X" secondAttribute="bottom" constant="30" id="UWf-oq-c6P"/>
+                            <constraint firstItem="Mc0-4o-aEs" firstAttribute="top" secondItem="VhP-JR-fm0" secondAttribute="bottom" constant="57" id="Rxq-ik-2Dl"/>
+                            <constraint firstItem="3qQ-59-Nq7" firstAttribute="top" secondItem="stf-gi-f4X" secondAttribute="bottom" constant="25" id="UWf-oq-c6P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="stf-gi-f4X" secondAttribute="trailing" constant="30" id="ZeM-GN-7z2"/>
                             <constraint firstItem="VhP-JR-fm0" firstAttribute="centerX" secondItem="Bht-xs-v2K" secondAttribute="centerX" id="gsl-8M-wDL"/>
                             <constraint firstItem="6C1-8l-EIN" firstAttribute="top" secondItem="glK-V7-ZsC" secondAttribute="bottom" constant="26" id="ol5-Do-nEP"/>
                             <constraint firstItem="6C1-8l-EIN" firstAttribute="leading" secondItem="Bht-xs-v2K" secondAttribute="leadingMargin" constant="30" id="qzU-XS-xzS"/>
                             <constraint firstItem="stf-gi-f4X" firstAttribute="top" secondItem="glK-V7-ZsC" secondAttribute="bottom" constant="26" id="rBf-Ky-qKG"/>
-                            <constraint firstItem="Jdc-L5-vz0" firstAttribute="top" secondItem="6C1-8l-EIN" secondAttribute="bottom" constant="30" id="wrF-KZ-deV"/>
+                            <constraint firstItem="Jdc-L5-vz0" firstAttribute="top" secondItem="6C1-8l-EIN" secondAttribute="bottom" constant="25" id="wrF-KZ-deV"/>
                         </constraints>
                     </view>
                 </viewController>
