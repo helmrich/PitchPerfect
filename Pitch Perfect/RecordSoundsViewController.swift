@@ -25,9 +25,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     override func viewWillAppear(animated: Bool) {
-        pauseButton.hidden = true
-        stopButton.hidden = true
-        recordButton.enabled = true
+        pauseButton.setImage(UIImage(named: "PauseButton"), forState: UIControlState.Normal)
+        toggleButtons(true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,10 +35,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func recordAudio(sender: UIButton) {
-        pauseButton.hidden = false
-        stopButton.hidden = false
+        toggleButtons(false)
         recordingInProgress.text = "Recording ..."
-        recordButton.enabled = false
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         
@@ -56,6 +53,12 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.meteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
+    }
+    
+    func toggleButtons(showOrHide: Bool) {
+        pauseButton.hidden = showOrHide
+        stopButton.hidden = showOrHide
+        recordButton.enabled = showOrHide
     }
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
@@ -93,12 +96,17 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func pauseRecording(sender: AnyObject) {
         if(audioRecorder.recording) {
-            recordingInProgress.text = "Paused ... Tap to Record"
+            setPauseButton(withText: "Paused ... Tap to Record", buttonName: "PlayButton")
             audioRecorder.pause()
         } else {
-            recordingInProgress.text = "Recording ..."
+            setPauseButton(withText: "Recording ...", buttonName: "PauseButton")
             audioRecorder.record()
         }
+    }
+    
+    func setPauseButton(withText recordingInProgressText: String, buttonName: String) {
+        recordingInProgress.text = recordingInProgressText
+        pauseButton.setImage(UIImage(named: buttonName), forState: UIControlState.Normal)
     }
     
     
