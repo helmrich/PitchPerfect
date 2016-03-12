@@ -31,17 +31,17 @@
                                 <color key="textColor" red="0.10196078431372549" green="0.2196078431372549" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="FGk-Vx-koG">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="FGk-Vx-koG">
                                 <rect key="frame" x="220" y="478" width="160" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXg-xk-3Ks">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXg-xk-3Ks">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <state key="normal" image="PauseButton"/>
                                         <connections>
                                             <action selector="pauseRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ay5-6E-F6a"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrt-Sd-3fr">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrt-Sd-3fr">
                                         <rect key="frame" x="110" y="0.0" width="50" height="50"/>
                                         <state key="normal" image="StopButton"/>
                                         <connections>
@@ -57,6 +57,7 @@
                             <constraint firstItem="lbo-fx-yoA" firstAttribute="top" secondItem="SBJ-f9-TbB" secondAttribute="bottom" constant="8" id="48r-CN-kC7"/>
                             <constraint firstItem="FGk-Vx-koG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EbQ-XE-bg4"/>
                             <constraint firstItem="SBJ-f9-TbB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ShQ-aL-RGe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FGk-Vx-koG" secondAttribute="bottom" constant="72" id="aAm-bm-lHN"/>
                             <constraint firstItem="SBJ-f9-TbB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="koW-wk-YRj"/>
                         </constraints>
                     </view>
