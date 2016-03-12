@@ -1,5 +1,5 @@
 # Pitch Perfect
-The first project of the iOS Nanodegree on Udacity. This application records a voice and lets the user choose from 5 options on how to change the voice and outputs the modified audio.
+The first project of the iOS Nanodegree on Udacity. This application records audio, lets the user choose from 5 options on how to change the sound and outputs the modified audio.
 
 ##Start screen
 
