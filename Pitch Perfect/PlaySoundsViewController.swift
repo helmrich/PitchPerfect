@@ -23,11 +23,11 @@ class PlaySoundsViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.title = "Play"
         
-        audioPlayer = try! AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl)
+        audioPlayer = try! AVAudioPlayer(contentsOf: receivedAudio.filePathUrl as URL)
         audioPlayer.enableRate = true
         
         audioEngine = AVAudioEngine()
-        audioFile = try! AVAudioFile(forReading: receivedAudio.filePathUrl)
+        audioFile = try! AVAudioFile(forReading: receivedAudio.filePathUrl as URL)
         
         
         setSessionPlayerOn()
@@ -45,7 +45,7 @@ class PlaySoundsViewController: UIViewController {
     }
     
     
-    @IBAction func stopAudio(sender: AnyObject) {
+    @IBAction func stopAudio(_ sender: AnyObject) {
         resetAudio()
     }
     
@@ -56,23 +56,23 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.currentTime = 0.0
     }
     
-    @IBAction func slowSound(sender: AnyObject) {
+    @IBAction func slowSound(_ sender: AnyObject) {
         playAudioWithSpeed(of: 0.5)
     }
     
-    @IBAction func fastSound(sender: AnyObject) {
+    @IBAction func fastSound(_ sender: AnyObject) {
         playAudioWithSpeed(of: 2.0)
     }
     
-    @IBAction func chipmunkSound(sender: AnyObject) {
+    @IBAction func chipmunkSound(_ sender: AnyObject) {
         playAudioWithPitch(of: 1000)
     }
     
-    @IBAction func darthVaderSound(sender: AnyObject) {
+    @IBAction func darthVaderSound(_ sender: AnyObject) {
         playAudioWithPitch(of: -1000)
     }
     
-    @IBAction func echoSound(sender: AnyObject) {
+    @IBAction func echoSound(_ sender: AnyObject) {
         playAudioWithDelay(of: 1.0)
     }
     
@@ -82,16 +82,16 @@ class PlaySoundsViewController: UIViewController {
         resetAudio()
         
         let audioPlayerNode = AVAudioPlayerNode()
-        audioEngine.attachNode(audioPlayerNode)
+        audioEngine.attach(audioPlayerNode)
         
         let changePitchEffect = AVAudioUnitTimePitch()
         changePitchEffect.pitch = pitch
-        audioEngine.attachNode(changePitchEffect)
+        audioEngine.attach(changePitchEffect)
         
         audioEngine.connect(audioPlayerNode, to: changePitchEffect, format: nil)
         audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
         
-        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioPlayerNode.scheduleFile(audioFile, at: nil, completionHandler: nil)
         try! audioEngine.start()
         
         audioPlayerNode.play()
@@ -100,20 +100,20 @@ class PlaySoundsViewController: UIViewController {
     // The following code adds another effect (echo). It's very similar to changing the pitch with the
     // difference that I used the AVAudioUnitDelay class instead of AVAudioUnitTimePitch and setting the
     // time delay instead of the pitch
-    func playAudioWithDelay(of delayInSeconds: NSTimeInterval) {
+    func playAudioWithDelay(of delayInSeconds: TimeInterval) {
         resetAudio()
         
         let audioPlayerNode = AVAudioPlayerNode()
-        audioEngine.attachNode(audioPlayerNode)
+        audioEngine.attach(audioPlayerNode)
         
         let setDelayEffect = AVAudioUnitDelay()
         setDelayEffect.delayTime = delayInSeconds
-        audioEngine.attachNode(setDelayEffect)
+        audioEngine.attach(setDelayEffect)
         
         audioEngine.connect(audioPlayerNode, to: setDelayEffect, format: nil)
         audioEngine.connect(setDelayEffect, to: audioEngine.outputNode, format: nil)
         
-        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioPlayerNode.scheduleFile(audioFile, at: nil, completionHandler: nil)
         try! audioEngine.start()
         
         audioPlayerNode.play()
@@ -136,7 +136,7 @@ class PlaySoundsViewController: UIViewController {
         } catch _ {
         }
         do {
-            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker)
+            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
         } catch _ {
         }
     }
